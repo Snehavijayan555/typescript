@@ -257,3 +257,128 @@
 //     age : 20 ,
 //     role : "admin",
 // }
+
+
+
+
+
+
+
+// enums / as const
+//  type StatusType = "pending" | "completed" | "failed";
+
+// example1 with number
+// enum StatusType{
+//     PENDING=1,
+//     COMPLETED,
+//     FAILED,
+// }
+
+// function getStatus(orderID: string, status: StatusType){
+//     console.log(orderID, "==", status);
+// }
+// getStatus("1234",StatusType.COMPLETED);
+
+
+// example2 with strings
+// enum StatusType{
+//     PENDING="pending",
+//     COMPLETED="completed",
+//     FAILED="failed",
+// }
+
+// function getStatus(orderID: string, status: StatusType){
+//     console.log(orderID, "==", status);
+// }
+// getStatus("1234",StatusType.COMPLETED);
+
+
+// as const
+// let userName = "sneha" as const;
+// userName = "sneha";
+
+
+
+
+
+
+// keyof / typeof
+
+// const StatusType = {
+//     PENDING:"pending",
+//     COMPLETED:"completed",
+//     FAILED:"failed",
+// } as const
+
+// function getStatus(orderID: string, status: keyof typeof StatusType){
+//     StatusType.PENDING="Hello";
+//     console.log(orderID, "==", StatusType[status]);
+// }
+// getStatus("1234","COMPLETED");
+
+
+
+
+
+
+// utility types
+
+// type Users = {
+//     name: string;
+//     age : number;
+// }
+
+// const userDetails : Readonly<Users> = {
+//     name : "sneha",
+//     age : 20,
+// };
+// userDetails.age = 30;
+// userDetails.name = "sneha";
+
+
+// Partial utility type
+// type Users = {
+//     name: string;
+//     age : number;
+// }
+// const userDetails : Partial<Users> = {
+//     name : "sneha",
+//     age : 20,
+// };
+
+
+// Required Type
+// type Users = {
+//         name: string;
+//         age ?: number;
+//     }
+//     const userDetails : Required<Users> = {
+//     name : "sneha",
+//     age : 20,
+// };
+
+
+// if u need only specific property
+
+// type Users = {
+//         name: string;
+//         age : number;
+//         salary : number;
+//     }
+//     const userDetails : Pick<Users , "name" | "age"> = {
+//     name : "sneha",
+//     age : 20,
+// };
+   
+
+// if u want to remove any properties
+
+// type Users = {
+//         name: string;
+//         age : number;
+//         salary : number;
+//     }
+// const userDetails : Omit<Users , "salary" > = {
+//         name : "sneha",
+//         age : 20,
+//     };
