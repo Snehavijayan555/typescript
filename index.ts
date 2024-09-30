@@ -382,3 +382,22 @@
 //         name : "sneha",
 //         age : 20,
 //     };
+
+
+// if u want to remove any properyies using union
+
+// type StatusType = "pending" | "completed" | "failed";
+// const status : Exclude<StatusType , "pending" > = "completed";  
+
+
+// Record utility(used when u dont know which keys and values will be)
+
+// type Food = Record<string , any>;
+
+// const food : Food = {
+//     PIZZA : "sdas",
+//     BURGER : {
+//         chicken : "lala",
+//     }
+// };
+
